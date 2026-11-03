@@ -1,0 +1,9 @@
+[
+  {"id": "ex-001", "question": "Checkout errors spiked at 14:05 and logs show payment-service timeouts. What is the root cause?", "answerable": true, "category": "answerable", "root_cause": "payment-service timeouts under load", "evidence_ids": ["rb-payment-timeouts", "log-checkout-1405"], "split": "test", "verified": false},
+  {"id": "ex-002", "question": "Cart latency jumped at 09:10. What caused it?", "answerable": false, "category": "missing_evidence", "unanswerable_reason": "No cart logs or metrics for that time are in the knowledge base.", "split": "test", "verified": false},
+  {"id": "ex-003", "question": "Why did the database fail during the 14:05 incident?", "answerable": false, "category": "false_premise", "unanswerable_reason": "Evidence shows the database stayed healthy; the failure was in payment-service.", "evidence_ids": ["log-checkout-1405"], "split": "test", "verified": false},
+  {"id": "ex-004", "question": "Why is the inventory-service crash-looping?", "answerable": false, "category": "out_of_scope", "unanswerable_reason": "There is no inventory-service in the knowledge base.", "split": "test", "verified": false},
+  {"id": "ex-005", "question": "Why did recommendation requests fail at 16:20?", "answerable": false, "category": "conflicting_evidence", "unanswerable_reason": "Logs support both a cache outage and a bad deploy equally.", "evidence_ids": ["log-reco-1620"], "split": "test", "verified": false},
+  {"id": "ex-006", "question": "How do I fix high latency in the frontend according to the runbook?", "answerable": false, "category": "stale_data", "unanswerable_reason": "The only runbook describes a version that was replaced.", "evidence_ids": ["rb-frontend-latency-old"], "split": "test", "verified": false},
+  {"id": "ex-007", "question": "Checkout is slow. Why?", "answerable": false, "category": "underspecified", "unanswerable_reason": "No time, service or symptom given.", "split": "test", "verified": false}
+]
