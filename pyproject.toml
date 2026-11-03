@@ -1,0 +1,29 @@
+[project]
+name = "rca-abstention-bench"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=2.4.0",
+    "httpx>=0.28.1",
+    "matplotlib>=3.11.2",
+    "openai>=3.42.1",
+    "pandas>=3.1.0",
+    "pydantic>=2.14.2",
+    "python-dotenv>=1.2.4",
+    "rank-bm25>=0.2.2",
+]
+
+[project.scripts]
+rca-abstention-bench = "rca_abstention_bench:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+]
