@@ -10,6 +10,7 @@ Rules:
 | File | Source | Written by |
 |------|--------|------------|
 | rb-payment-unreachable.md | OpenTelemetry demo feature flag `paymentUnreachable` (https://opentelemetry.io/docs/demo/feature-flags/) | AI-drafted; Jessieca review/edit pending |
+| rb-payment-failure.md | OpenTelemetry demo feature flag `paymentFailure` (https://opentelemetry.io/docs/demo/feature-flags/) | AI-drafted; Jessieca review/edit pending |
 | rb-kafka-queue-lag.md | OpenTelemetry demo feature flag `kafkaQueueProblems` (https://opentelemetry.io/docs/demo/feature-flags/) | AI-drafted; Jessieca review/edit pending |
 | rb-recommendation-cache-leak.md | OpenTelemetry demo feature flag `recommendationCacheFailure` (https://opentelemetry.io/docs/demo/feature-flags/recommendation-cache/) | AI-drafted; Jessieca review/edit pending |
 

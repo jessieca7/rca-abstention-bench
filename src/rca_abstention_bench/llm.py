@@ -37,23 +37,27 @@ class LLMClient:
         system: str | None = None,
         temperature: float = 0.0,
         tag: str = "",
+        json_mode: bool = False,
     ) -> LLMResponse:
         """Send one prompt, return the reply, and append a record to the log.
 
         temperature=0 gives (mostly) repeatable answers; self-consistency
         will pass a higher value on purpose.
         `tag` is a free label (e.g. "design2:q017") to find the call in the log.
+        json_mode=True asks the server to return valid JSON only.
         """
         messages = []
         if system:
             messages.append({"role": "system", "content": system})
         messages.append({"role": "user", "content": prompt})
 
+        extra = {"response_format": {"type": "json_object"}} if json_mode else {}
         start = time.perf_counter()
         raw = self._client.chat.completions.create(
             model=self.settings.model,
             messages=messages,
             temperature=temperature,
+            **extra,
         )
         latency = time.perf_counter() - start
 

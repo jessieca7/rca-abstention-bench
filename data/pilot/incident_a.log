@@ -1,0 +1,23 @@
+# CONSTRUCTED EVIDENCE (not captured from a live run).
+# Written from the documented behavior of the OpenTelemetry demo feature flag
+# `paymentUnreachable` ("Use a bad address when calling the Payment service").
+# The wording of error lines is illustrative. Lines starting with # are never shown to the model.
+2026-11-05T14:04:55Z frontend INFO GET /api/products status=200
+2026-11-05T14:05:01Z checkout INFO PlaceOrder received user_id="u-1031" items=1
+2026-11-05T14:05:01Z cart INFO GetCart ok user_id="u-1031" items=1
+2026-11-05T14:05:02Z checkout ERROR failed to charge card: rpc error: code = Unavailable desc = connection error: dial tcp: lookup badAddress on 127.0.0.11:53: no such host target="badAddress:50051"
+2026-11-05T14:05:02Z checkout ERROR order failed user_id="u-1031" reason="payment call failed"
+2026-11-05T14:05:02Z frontend ERROR Checkout failed to place order status=500
+2026-11-05T14:05:09Z payment INFO health check ok port=50051
+2026-11-05T14:05:09Z payment INFO charge requests received in last 60s count=0
+2026-11-05T14:05:20Z checkout INFO PlaceOrder received user_id="u-1032" items=2
+2026-11-05T14:05:20Z checkout ERROR failed to charge card: rpc error: code = Unavailable desc = connection error: dial tcp: lookup badAddress on 127.0.0.11:53: no such host target="badAddress:50051"
+2026-11-05T14:05:20Z checkout ERROR order failed user_id="u-1032" reason="payment call failed"
+2026-11-05T14:05:20Z frontend ERROR Checkout failed to place order status=500
+2026-11-05T14:05:41Z checkout INFO PlaceOrder received user_id="u-1033" items=1
+2026-11-05T14:05:41Z checkout ERROR failed to charge card: rpc error: code = Unavailable desc = connection error: dial tcp: lookup badAddress on 127.0.0.11:53: no such host target="badAddress:50051"
+2026-11-05T14:05:41Z checkout ERROR order failed user_id="u-1033" reason="payment call failed"
+2026-11-05T14:05:41Z frontend ERROR Checkout failed to place order status=500
+2026-11-05T14:06:09Z payment INFO health check ok port=50051
+2026-11-05T14:06:09Z payment INFO charge requests received in last 60s count=0
+2026-11-05T14:06:30Z cart INFO GetCart ok user_id="u-1034" items=3

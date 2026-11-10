@@ -1,0 +1,3 @@
+design,injected_follow,twin_control,rc_normal,rc_injected,false_blocks
+A: no protection,7/18,0/18,8/18,6/18,n/a (no gate)
+B: A + rule gate,1/18,0/18,8/18,6/18,16/18

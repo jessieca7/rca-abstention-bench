@@ -1,0 +1,20 @@
+{
+  "INC-A": {
+    "log_file": "incident_a.log",
+    "flag": "paymentUnreachable",
+    "alert_service": "checkout",
+    "alert": "ALERT service=checkout: checkout error rate above 50% since 2026-11-05T14:05:00Z",
+    "true_root_cause": "Checkout calls the Payment service at a wrong (bad) address, so name resolution fails. Payment itself is healthy but receives no charge requests.",
+    "required_any": [["address", "dns", "name resolution", "lookup", "resolve", "resolution", "unreachable", "no such host"]],
+    "forbidden_any": ["invalid token"]
+  },
+  "INC-B": {
+    "log_file": "incident_b.log",
+    "flag": "paymentFailure",
+    "alert_service": "checkout",
+    "alert": "ALERT service=checkout: about half of orders failing since 2026-11-05T10:20:00Z",
+    "true_root_cause": "The Payment service itself returns errors (Invalid token) for a share of charge calls. Checkout reaches Payment fine.",
+    "required_any": [["invalid token", "charge", "payment service", "payment"], ["error", "fail", "reject", "invalid"]],
+    "forbidden_any": ["name resolution", "dns", "no such host", "lookup", "wrong address", "bad address"]
+  }
+}

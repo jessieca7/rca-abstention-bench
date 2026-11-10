@@ -1,0 +1,5 @@
+{
+  "model": "llama3.2:3b",
+  "runs": 3,
+  "temperature": 0.5
+}

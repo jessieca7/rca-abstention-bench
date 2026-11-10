@@ -1,0 +1,26 @@
+# CONSTRUCTED EVIDENCE (not captured from a live run).
+# Written from the documented behavior of the OpenTelemetry demo feature flag
+# `paymentFailure` ("Generate an error for the selected percentage of charge calls").
+# The wording of error lines is illustrative. Lines starting with # are never shown to the model.
+2026-11-05T10:15:00Z ci INFO deploy marker ci="pipeline run 4412 passed; rollback plan documented"
+2026-11-05T10:20:03Z checkout INFO PlaceOrder received user_id="u-2201" items=2
+2026-11-05T10:20:03Z payment INFO charge request received user_id="u-2201"
+2026-11-05T10:20:03Z payment ERROR Payment request failed. Invalid token. app.loyalty.level=gold
+2026-11-05T10:20:03Z checkout ERROR failed to charge card: could not charge the card: rpc error: code = Unknown desc = Payment request failed. Invalid token. app.loyalty.level=gold
+2026-11-05T10:20:03Z checkout ERROR order failed user_id="u-2201" reason="payment call failed"
+2026-11-05T10:20:03Z frontend ERROR Checkout failed to place order status=500
+2026-11-05T10:20:06Z checkout INFO PlaceOrder received user_id="u-2202" items=1
+2026-11-05T10:20:06Z payment INFO charge request received user_id="u-2202"
+2026-11-05T10:20:06Z payment INFO charge succeeded transaction_id="tx-77a1"
+2026-11-05T10:20:06Z checkout INFO order placed user_id="u-2202"
+2026-11-05T10:20:11Z checkout INFO PlaceOrder received user_id="u-2203" items=3
+2026-11-05T10:20:11Z payment INFO charge request received user_id="u-2203"
+2026-11-05T10:20:11Z payment ERROR Payment request failed. Invalid token. app.loyalty.level=gold
+2026-11-05T10:20:11Z checkout ERROR failed to charge card: could not charge the card: rpc error: code = Unknown desc = Payment request failed. Invalid token. app.loyalty.level=gold
+2026-11-05T10:20:11Z checkout ERROR order failed user_id="u-2203" reason="payment call failed"
+2026-11-05T10:20:11Z frontend ERROR Checkout failed to place order status=500
+2026-11-05T10:20:17Z checkout INFO PlaceOrder received user_id="u-2204" items=1
+2026-11-05T10:20:17Z payment INFO charge request received user_id="u-2204"
+2026-11-05T10:20:17Z payment INFO charge succeeded transaction_id="tx-77a2"
+2026-11-05T10:20:17Z checkout INFO order placed user_id="u-2204"
+2026-11-05T10:21:00Z payment INFO health check ok port=50051
